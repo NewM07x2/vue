@@ -29,14 +29,12 @@ api.interceptors.response.use(function (response) {
   }
   if (response.data['redirectUrl'] && response.data['redirectUrl'] !== null) {
     location.href = response.data['redirectUrl']
-  }
-  else if (response.data.responseBody && response.data.responseBody !== null) {
+  } else if (response.data.responseBody && response.data.responseBody !== null) {
     if (response.data.responseBody['redirectUrl'] && response.data.responseBody['redirectUrl'] !== null) {
       if (!response.data.responseBody['dispType'] || response.data.responseBody['dispType'] === null ||
           response.data.responseBody['dispType'] === '01') {
         location.href = response.data.responseBody['redirectUrl']
-      }
-      else {
+      } else {
         window.open(response.data.responseBody['redirectUrl'], '_blank')
       }
     }
@@ -52,13 +50,11 @@ api.interceptors.response.use(function (response) {
     console.log('認可エラーです')
     redirect(process.env.ERROR_401, 'ERROR_401')
     return Promise.reject(err)
-  }
-  else if (err.response.status === 403) {
+  } else if (err.response.status === 403) {
     console.log('認可エラーです')
     redirect(process.env.ERROR_403, 'ERROR_403')
     return Promise.reject(err)
-  }
-  else if (err.response.status === 500) {
+  } else if (err.response.status === 500) {
     redirect(process.env.ERROR_500, 'ERROR_500')
     return Promise.reject(err)
   }
@@ -67,8 +63,7 @@ api.interceptors.response.use(function (response) {
 function redirect (param, paramName) {
   if (typeof param !== 'undefined' && param !== '') {
     location.href = param
-  }
-  else {
+  } else {
     console.log('定義が存在しないため、遷移を行いませんでした。定義:' + paramName)
   }
 }

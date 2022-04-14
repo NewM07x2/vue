@@ -4,7 +4,7 @@ import router from './router'
 import _ from 'lodash'
 
 // Ajax通信ライブラリ
-import axios from "common/api/axios"
+import axios from '@/api/axios'
 
 // 定数定義ファイル
 import constants from './constants/index.js'
@@ -22,9 +22,9 @@ import BootstrapVue from 'bootstrap-vue'
 import Multiselect from 'vue-multiselect'
 
 Vue.use(BootstrapVue)
-Vue.component("multiselect", Multiselect)
-Vue.component("common-loading", CommonLoading)
-Vue.component("message-bar", messageBar)
+Vue.component('multiselect', Multiselect)
+// Vue.component('common-loading', CommonLoading)
+// Vue.component('message-bar', messageBar)
 
 Vue.config.productionTip = false
 

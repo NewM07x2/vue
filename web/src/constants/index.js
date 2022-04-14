@@ -9,5 +9,5 @@ export default {
   // actions
   UPDATE_DANGER_ALERTS: 'UPDATE_DANGER_ALERTS',
 
-  SC_MAX_FILE_SIZE: 10,
+  SC_MAX_FILE_SIZE: 10
 }
