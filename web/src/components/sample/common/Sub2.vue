@@ -31,7 +31,8 @@ export default {
     countFunction () {
       this.count += 1
     }
-  }
+  },
+  watch
 }
 </script>
 

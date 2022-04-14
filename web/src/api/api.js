@@ -2,7 +2,7 @@ import store from '@/store'
 import CONST from '@/constants'
 
 // Ajax通信ライブラリ
-import axios from 'common-cli/src/axios'
+import axios from 'common/api/axios'
 import Vue from 'vue'
 Vue.prototype.$api = axios
 
