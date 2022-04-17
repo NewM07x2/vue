@@ -1,8 +1,6 @@
 <template>
-  <div>
+  <div id="main">
     <h1>sample</h1>
-    <Sub1></Sub1>
-    <Sub2></Sub2>
     msg:「{{ msg }}」
     <button @click='clear()'>clear</button>
     <input type='text' name='text' id='text' v-model='msg'>
@@ -13,25 +11,38 @@
       <button @click='copy'>copy</button>
       <button @click='push'>push</button>
     </div>
-
+    <PropEmit
+      ref="child"
+      :PropFromSample='PropToPropEmitON'
+      @printLog1='printLog'
+    />
+    <button @click='printLog("AAA")'>AAA</button>
+    <Sync/>
+    <SlotMain/>
   </div>
 </template>
 <script>
 import _ from 'lodash'
-import Sub1 from '@/components/sample/common/Sub1.vue'
-import Sub2 from '@/components/sample/common/Sub2.vue'
+import PropEmit from '@/components/sample/PropEmitON/PropEmit.vue'
+import Sync from '@/components/sample/sync/Sync'
+import SlotMain from '@/components/sample/slot/SlotMain'
 
 export default {
   name: 'App',
   components: {
-    Sub1,
-    Sub2
+    PropEmit,
+    Sync,
+    SlotMain
   },
   data () {
     return {
       msg: 'Hello World!',
       result: 1,
-      list: []
+      list: [],
+      text: 'sample.vueを読み込んでいます。',
+      PropToPropEmitON: 'PropToPropEmitON',
+      NoPropToPropEmitON: 'NoPropToPropEmitON'
+
     }
   },
   computed: {
@@ -43,6 +54,13 @@ export default {
   created () {
   },
   methods: {
+    printLog (text) {
+      // this.$refs.child.testLog()
+      console.log(text + 'を押下しました。')
+    },
+    addCount () {
+      return this.msg + '★'
+    },
     clear () {
       this.msg = ''
     },
@@ -101,5 +119,4 @@ export default {
 </script>
 
 <style>
-
 </style>
