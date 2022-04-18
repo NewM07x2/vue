@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import NotPage from '@/components/NotPage'
-
-import sample from '@/components/sample/sample'
+import Main from '@/components/page/General/Main'
+import SystemErorr from '@/components/page/General/SystemErorr'
 
 Vue.use(Router)
 
@@ -13,27 +11,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'Main',
+      component: Main,
       props: true
     },
     {
-      path: '/top',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      path: '/Main',
+      name: 'Main',
+      component: Main,
       props: true
     },
     {
-      path: '/401',
-      name: 'NotPage',
-      component: NotPage,
-      props: true
-    },
-    {
-      path: '/sample',
-      name: 'sample',
-      component: sample,
+      path: '/SystemErorr',
+      name: 'SystemErorr',
+      component: SystemErorr,
       props: true
     }
+    // {
+    //   path: '/sample',
+    //   name: 'sample',
+    //   component: sample,
+    //   props: true
+    // }
   ]
 })

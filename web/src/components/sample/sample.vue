@@ -19,6 +19,7 @@
     <button @click='printLog("AAA")'>AAA</button>
     <Sync/>
     <SlotMain/>
+    <mixin/>
   </div>
 </template>
 <script>
@@ -26,13 +27,15 @@ import _ from 'lodash'
 import PropEmit from '@/components/sample/PropEmitON/PropEmit.vue'
 import Sync from '@/components/sample/sync/Sync'
 import SlotMain from '@/components/sample/slot/SlotMain'
+import mixin from '@/components/sample/mixin/mixin'
 
 export default {
   name: 'App',
   components: {
     PropEmit,
     Sync,
-    SlotMain
+    SlotMain,
+    mixin
   },
   data () {
     return {

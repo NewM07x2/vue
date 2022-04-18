@@ -1,13 +1,12 @@
 <template>
   <div id='main'>
-    <p><slot>{{text}}</slot></p>
+    <p>{{text}}(変化なし系)</p>
+    <p><slot>{{text}}</slot>(変化あり系)</p>
+    <p><slot :slotScope="slotScope">{{slotScope}}</slot>(変化あり系:名前指定)</p>
   </div>
 </template>
 <style>
 </style>
-
-  </div>
-</template>
 <script>
 export default {
   // name: 'SubSub',
