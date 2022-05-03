@@ -1,7 +1,29 @@
 <template>
-  <div id="main">
-    <h1>main</h1>
-  </div>
+  <footer class='footer'>
+    <div class='container'>
+      <nav class='float-left'>
+        <ul>
+          <li>
+            <a href='#'>Creative Tim</a>
+          </li>
+          <li>
+            <a href='#'>About Us</a>
+          </li>
+          <li>
+            <a href='#'>Blog</a>
+          </li>
+
+          <li>
+            <a href='#'>Licenses</a>
+          </li>
+        </ul>
+      </nav>
+      <div class='copyright float-right'>
+        © 2022, made with <i class='material-icons'>favorite</i> by
+        <a href='#' target='_blank'>Creative Tim</a> for a better web.
+      </div>
+    </div>
+  </footer>
 </template>
 <script>
 // import _ from 'lodash'
@@ -29,4 +51,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
