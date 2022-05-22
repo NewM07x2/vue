@@ -16,20 +16,13 @@
             <div class='col-md-8 ml-auto mr-auto text-center'>
               <ul id="ul-center" class='nav nav-pills nav-pills-primary'>
                 <li class='nav-item'>
-                  All
-                  <!-- <a class='nav-link active' href='#pill1' data-toggle='tab'>All</a> -->
+                  <a class='nav-link active' data-toggle='tab' @click="testClick" >All</a>
                 </li>
                 <li class='nav-item'>
-                  <!-- <a class='nav-link' href='#pill2' data-toggle='tab'>World</a> -->
+                  <a class='nav-link' data-toggle='tab'>World</a>
                 </li>
                 <li class='nav-item'>
-                  <!-- <a class='nav-link' href='#pill3' data-toggle='tab'>Arts</a> -->
-                </li>
-                <li class='nav-item'>
-                  <!-- <a class='nav-link' href='#pill3' data-toggle='tab'>Tech</a> -->
-                </li>
-                <li class='nav-item'>
-                  <!-- <a class='nav-link' href='#pill3' data-toggle='tab'>Business</a> -->
+                  <a class='nav-link' data-toggle='tab'>Arts</a>
                 </li>
               </ul>
               <div class='tab-content tab-space'>
@@ -257,6 +250,9 @@ export default {
   },
   created () {},
   methods: {
+    testClick () {
+      console.log('testClick!!!')
+    }
   },
   watch: {
     msg () {
@@ -295,18 +291,6 @@ export default {
 }
 .header-filter {
   position: relative;
-}
-
-.main {
-    background: #fff;
-    position: relative;
-    z-index: 3;
-}
-
-.main-raised {
-  margin: -60px 30px 0;
-  border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
 
 .main > .container{

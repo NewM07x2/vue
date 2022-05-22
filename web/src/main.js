@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import _ from 'lodash'
 
 // Ajax通信ライブラリ
@@ -24,22 +25,24 @@ import './assets/css/styles.css'
 
 // fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-// import { faHeart } from '@fortawesome/free-regular-svg-icons'
-// import { faApple } from '@fortawesome/free-brands-svg-icons'
+// import {
+//   faUserSecret,
+//   faBookmark
+// } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // vue-multiselect
 import Multiselect from 'vue-multiselect'
 
 // 使用するアイコンを指定。全てimportすることも可能だが、要領が増えるため個別でimportするのが妥当。
-library.add(faUserSecret)
-// library.add(faHeart)
-// library.add(faApple)
+library.add(fas, far, fab)
 // ----------------------------------------------------------------------
 
 Vue.use(BootstrapVue)
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('v-icon', FontAwesomeIcon)
 Vue.component('multiselect', Multiselect)
 // Vue.component('common-loading', CommonLoading)
 // Vue.component('message-bar', messageBar)
@@ -54,6 +57,7 @@ Vue.prototype.$_ = _
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

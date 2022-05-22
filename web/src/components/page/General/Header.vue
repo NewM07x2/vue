@@ -17,7 +17,7 @@
       <div class='collapse navbar-collapse'>
         <ul class='navbar-nav ml-auto'>
           <li class='dropdown nav-item'>
-            <button to="/" class='dropdown-toggle nav-link nav-original' data-toggle='dropdown' @click="openDropDown">Components</button>
+            <button to="/" class='dropdown-toggle nav-link nav-original' data-toggle='dropdown' @click="openDropDown">book</button>
             <div class='dropdown-menu dropdown-with-icons display-none'>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>Presentation</router-link>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>All Components</router-link>
@@ -34,13 +34,16 @@
             </div>
           </li>
           <li class='dropdown nav-item'>
-            <button to="/" class='dropdown-toggle nav-link nav-original' data-toggle='dropdown' @click="openDropDown">Examples</button>
+            <button to="/" class='dropdown-toggle nav-link nav-original' data-toggle='dropdown' @click="openDropDown">MyPage</button>
             <div class='dropdown-menu dropdown-with-icons display-none'>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>Headers</router-link>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>Features</router-link>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>Blogs</router-link>
               <router-link to="/" class='dropdown-item' data-toggle='dropdown'>Teams</router-link>
             </div>
+          </li>
+          <li class='dropdown nav-item'>
+            <button to="/" class='dropdown-toggle nav-link nav-original' data-toggle='dropdown' @click="openDropDown">Login</button>
           </li>
         </ul>
       </div>

@@ -13,6 +13,7 @@ import Header from '@/components/page/General/Header'
 import Footer from '@/components/page/General/Footer'
 import Contact from '@/components/page/General/Contact'
 import Login from '@/components/page/General/Login'
+import Error404 from '@/components/page/General/Error404'
 
 export default {
   name: 'App',
@@ -20,6 +21,7 @@ export default {
     Header,
     Footer,
     Login,
+    Error404,
     Contact
   }
 }

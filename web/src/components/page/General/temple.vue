@@ -1,6 +1,10 @@
 <template>
-  <div id="main">
+  <div id='main'>
     <h1>main</h1>
+    <p><v-icon icon='fab fa-apple'/></p>
+    <button @click='twitter'><i class='p10'><v-icon icon='fab fa-twitter'/></i></button>
+    <p><v-icon icon='fab fa-google'/></p>
+    <p><v-icon icon='fab fa-facebook-square'/></p>
   </div>
 </template>
 <script>
@@ -22,6 +26,9 @@ export default {
   },
   created () {},
   methods: {
+    twitter () {
+      console.log('twiter')
+    }
   },
   watch: {
     msg () {
