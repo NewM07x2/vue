@@ -1,0 +1,78 @@
+#jexcel {
+  width: 100%;
+  height: 100%;
+  scrollbar-width: 100%;
+  /* position: relative; */
+}
+
+.jexcel_filter {
+  position: absolute !important;
+}
+
+.jexcel_content {
+  max-height: 350px !important;
+  overflow-y: unset !important;
+  position: relative;
+  margin: 50px 0 10px 0;
+}
+
+.jexcel_pagination {
+  position: absolute !important;
+}
+
+
+thead > tr > td:nth-child(1),
+tbody > tr > td:nth-child(1)
+{
+  width: 10px !important;
+  z-index: 11;
+  white-space: nowrap;
+  background: white!important;
+  position: sticky!important;
+  top: 0px;
+  left: 1px;
+}
+
+thead > tr > td:nth-child(2),
+tbody > tr > td:nth-child(2)
+{
+  z-index: 9;
+  white-space: nowrap;
+  background: white;
+  position: sticky!important;
+  top: 0px;
+  left: 51px;
+}
+
+thead > tr > td:nth-child(3),
+tbody > tr > td:nth-child(3)
+{
+  z-index: 9;
+  white-space: nowrap;
+  background: white;
+  position: sticky!important;
+  top: 0px;
+  left: 201px;
+}
+
+thead > tr > td:nth-child(4),
+tbody > tr > td:nth-child(4)
+{
+  z-index: 9;
+  white-space: nowrap;
+  background: white;
+  position: sticky!important;
+  top: 0px;
+  left: 251px;
+}
+
+thead > tr > td:nth-child(5),
+tbody > tr > td:nth-child(5)
+{
+  z-index: 9;
+  white-space: nowrap;
+  background: white;
+  position: sticky!important;
+  top: 0px;
+  left: 501px;
+}
