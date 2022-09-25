@@ -2,11 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import NotFound from '@/components/pages/NotFound'
+import Times from '@/components/pages/Times'
 import Store from '@/components/pages/Store'
 import GoJS from '@/components/pages/GoJS'
 import jexcel from '@/components/pages/jexcel'
 import GoogleMap from '@/components/pages/GoogleMap'
 import Modal from '@/components/pages/Modal'
+import ModalWindow from '@/components/pages/ModalWindow'
+import Bootstrap from '@/components/pages/Bootstrap'
 
 Vue.use(Router)
 
@@ -18,6 +21,12 @@ export default new Router({
       path: '/',
       name: 'Main',
       component: Main,
+      props: true
+    },
+    {
+      path: '/times',
+      name: 'times',
+      component: Times,
       props: true
     },
     {
@@ -48,6 +57,18 @@ export default new Router({
       path: '/modal',
       name: 'modal',
       component: Modal,
+      props: true
+    },
+    {
+      path: '/modalWindow',
+      name: 'modalWindow',
+      component: ModalWindow,
+      props: true
+    },
+    {
+      path: '/bootstrap',
+      name: 'bootstrap',
+      component: Bootstrap,
       props: true
     },
     {

@@ -7,7 +7,9 @@
       <ul>
         <li>{{ message }}</li>
         <li>{{ message2 }}</li>
-        <li>カウント： {{ count }}
+        <li>
+          「{{ count }}」
+          「{{ getCount }}」
           <button @click="increment"> +1 </button>
           <button @click="decrement_"> -1 </button>
           <button @click="increment10"> +10 </button>
@@ -32,19 +34,20 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      // stateCount: null,
+      // gettersCount: null
     }
   },
   computed: {
     ...mapState([ 'count' ]),
-    ...mapGetters([ 'count' ]),
+    ...mapGetters([ 'getMessage', 'getCount' ]),
     message () {
+      // stateに直接見にいく
       return this.$store.state.message_state
     },
     message2 () {
-      return this.$store.getters.messageGetter
-    // },
-    // count () {
-    //   return this.$store.getters.count
+      // getter経由でstateの情報を見にいく
+      return this.$store.getters.getMessage
     }
   },
   methods: {

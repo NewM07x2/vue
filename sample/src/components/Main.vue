@@ -2,19 +2,11 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Vue Practice</h2>
-    <div id="overlay" @click="modalCloed" v-if="modalFlg">
-      <div id="modal" class="modal" @click="stopEvent">
-        <h1>modal</h1>
-        <div>
-          <router-link :to="{ name: 'modal'}" target="_blank" style='width=800, height=600, top=0, left=0'>
-            Link Text
-          </router-link>
-          <button @click="windowOpen">window open</button>
-          <button @click="modalCloed">modalCloed</button>
-        </div>
-      </div>
-    </div>
     <ul>
+      <li>
+        <label for="">時計について：</label>
+        <router-link to="/time">Go to Times</router-link>
+      </li>
       <li>
         <label for="">Storeについて：</label>
         <router-link to="/store">Go to Store</router-link>
@@ -27,24 +19,69 @@
         <label for="">Modal画面：</label>
         <button @click='modalOpen'>modalOpen</button>
       </li>
-    </ul>
+      <li>
+        <label for="">bootstrapについて：</label>
+        <router-link to="/bootstrap">bootstrap</router-link>
+      </li>
+      <Modal @modalCloed='modalCloed' v-if="modalFlg"/>
+      <div>
+        <b-form-select
+          v-model="selected"
+          :options="options"
+          value-field="item"
+          text-field="name"
+          disabled-field="notEnabled"
+        ></b-form-select>
+        <div class="mt-3">Selected: <strong>{{ selected }}</strong></div>
+      </div>
+      <b-button @click='selectBtn' variant="secondary">表示/非表示</b-button>
+      <b-button variant="danger" @click='selectChange' v-if="selectFlg">reset</b-button>
+      </ul>
+
   </div>
 </template>
 
 <script>
+import {
+  mapState,
+  mapGetters
+} from 'vuex'
+import Modal from '@/components/pages/Modal'
 export default {
   name: 'Main',
+  components: {
+    Modal
+  },
   data () {
     return {
       msg: 'Vue',
       modalFlg: false,
+      selectFlg: true,
       windowSize: {
         x: 0,
         y: 0
-      }
+      },
+      selectedValue: '',
+      options: [
+        { item: 'A', name: 'Option A' },
+        { item: 'B', name: 'Option B' },
+        { item: 'D', name: 'Option C', notEnabled: true },
+        { item: { d: 1 }, name: 'Option D' }
+      ]
     }
   },
-  mounted () {
+  computed: {
+    ...mapState([ 'count' ]),
+    ...mapGetters([ 'getMessage', 'getCount' ]),
+    selected: {
+      get () {
+        return this.selectedValue
+      },
+      set (value) {
+        this.selectFlg = !this.selectFlg
+        this.selectedValue = value
+      }
+    }
   },
   methods: {
     modalOpen () {
@@ -52,17 +89,23 @@ export default {
       this.modalFlg = true
     },
     modalCloed () {
-      console.log('modalCloed')
       this.modalFlg = false
     },
-    stopEvent () {
-      event.stopPropagation()
+    selectBtn () {
+      this.selectFlg = !this.selectFlg
+      console.log(this.selectFlg)
     },
-    windowOpen () {
-      console.log('windowOpen')
-      const url = this.$router.resolve({ name: 'modal' }).href
-      window.open(url, '画面', 'width=1000, height=600, top=200, left=500')
+    selectChange () {
+      console.log('selectChange')
+      this.selected = 'A'
     }
+  },
+  created () {
+  },
+  beforeMount () {
+    this.selected = 'A'
+  },
+  mounted () {
   }
 }
 </script>
