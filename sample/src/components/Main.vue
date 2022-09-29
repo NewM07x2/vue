@@ -23,6 +23,10 @@
         <label for="">bootstrapについて：</label>
         <router-link to="/bootstrap">bootstrap</router-link>
       </li>
+      <li>
+        <label for="">Apiについて：</label>
+        <router-link to="/api">api</router-link>
+      </li>
       <Modal @modalCloed='modalCloed' v-if="modalFlg"/>
       <div>
         <b-form-select

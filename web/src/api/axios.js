@@ -1,6 +1,3 @@
-/**
- * Copyright(C) 2018 SOFTBANK Corp.All rights reserved.
- */
 import Axios from 'axios'
 
 Axios.defaults.headers.common['X-User-Agent'] = (() => { return '[rewrite]'.concat(navigator.userAgent, (/.*(iPad|Macintosh).*/.test(navigator.userAgent) && 'ontouchend' in document ? '[iPad]' : '[]')) })()

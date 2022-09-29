@@ -10,6 +10,7 @@ import GoogleMap from '@/components/pages/GoogleMap'
 import Modal from '@/components/pages/Modal'
 import ModalWindow from '@/components/pages/ModalWindow'
 import Bootstrap from '@/components/pages/Bootstrap'
+import Api from '@/components/pages/Api'
 
 Vue.use(Router)
 
@@ -69,6 +70,12 @@ export default new Router({
       path: '/bootstrap',
       name: 'bootstrap',
       component: Bootstrap,
+      props: true
+    },
+    {
+      path: '/api',
+      name: 'api',
+      component: Api,
       props: true
     },
     {
