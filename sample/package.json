@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.0.1",
     "bootstrap-vue": "^2.22.0",
+    "dexie": "^3.2.4",
     "gojs": "^2.2.10",
     "google-maps-api-loader": "^1.1.1",
     "jexcel": "^4.6.1",
