@@ -27,6 +27,10 @@
         <label for="">Apiについて：</label>
         <router-link to="/api">api</router-link>
       </li>
+      <li>
+        <label for="">IndexDB</label>
+        <router-link to="/IndexDB">IndexDB</router-link>
+      </li>
       <Modal @modalCloed='modalCloed' v-if="modalFlg"/>
       <div>
         <b-form-select

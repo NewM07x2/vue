@@ -11,6 +11,7 @@ import Modal from '@/components/pages/Modal'
 import ModalWindow from '@/components/pages/ModalWindow'
 import Bootstrap from '@/components/pages/Bootstrap'
 import Api from '@/components/pages/Api'
+import IndexDB from '@/components/pages/IndexDB'
 
 Vue.use(Router)
 
@@ -76,6 +77,12 @@ export default new Router({
       path: '/api',
       name: 'api',
       component: Api,
+      props: true
+    },
+    {
+      path: '/indexDB',
+      name: 'indexDB',
+      component: IndexDB,
       props: true
     },
     {
